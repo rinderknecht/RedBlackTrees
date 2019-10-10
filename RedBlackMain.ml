@@ -68,12 +68,12 @@ let rec pretty buffer ~pad:(pd,pc) = function
   Ext -> Buffer.add_string buffer (pd ^ "Ext\n")
 | Int (colour, left, root, right) ->
     let root_str =
-      Printf.sprintf "%s%s%d)\n" pd
-        (if colour = Red then "Int (Red," else "Int (Black,") root in
+      Printf.sprintf "%sInt (%s,%d)\n" pd
+        (if colour = Red then "Red" else "Black") root in
     let app rank sub =
       let pad =
-        (pc ^ (if rank = 1 then "`-- " else "|-- "),
-         pc ^ (if rank = 1 then "    " else "|   "))
+        pc ^ (if rank = 0 then "|-- " else "`-- "),
+        pc ^ (if rank = 0 then "|   " else "    ")
       in pretty buffer ~pad sub in
     begin
       Buffer.add_string buffer root_str;
