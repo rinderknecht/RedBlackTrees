@@ -40,3 +40,49 @@ let rec draw ~pad:(pd,pc) = function
     end
 
 let () = draw ~pad:("","") t
+
+let rec to_string buffer ~pad:(pd,pc) = function
+  Ext -> ()
+| Int (colour, left, root, right) ->
+    let root_str =
+      Printf.sprintf "%s%s(%d)\n" pd
+        (if colour = Red then "R" else "B") root in
+    let app rank sub =
+      let pad =
+        (pc ^ (if rank = 1 then "`-- " else "|-- "),
+         pc ^ (if rank = 1 then "    " else "|   "))
+      in to_string buffer ~pad sub in
+    begin
+      Buffer.add_string buffer root_str;
+      List.iteri app [left; right]
+    end
+
+let to_string tree =
+  let buffer = Buffer.create 131 in
+  let     () = to_string buffer ~pad:("","") tree
+  in Buffer.contents buffer
+
+let () = to_string t |> print_string |> print_newline
+
+let rec pretty buffer ~pad:(pd,pc) = function
+  Ext -> Buffer.add_string buffer (pd ^ "Ext\n")
+| Int (colour, left, root, right) ->
+    let root_str =
+      Printf.sprintf "%s%s%d)\n" pd
+        (if colour = Red then "Int (Red," else "Int (Black,") root in
+    let app rank sub =
+      let pad =
+        (pc ^ (if rank = 1 then "`-- " else "|-- "),
+         pc ^ (if rank = 1 then "    " else "|   "))
+      in pretty buffer ~pad sub in
+    begin
+      Buffer.add_string buffer root_str;
+      List.iteri app [left; right]
+    end
+
+let pretty tree =
+  let buffer = Buffer.create 131 in
+  let     () = pretty buffer ~pad:("","") tree
+  in Buffer.contents buffer
+
+let () = pretty t |> print_string |> print_newline
