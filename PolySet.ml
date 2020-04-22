@@ -11,17 +11,13 @@ type 'elt set = 'elt t
 
 let create ~cmp = {tree = RB.empty; cmp}
 
-let empty = {tree = RB.empty; cmp=Pervasives.compare}
+let empty = {tree = RB.empty; cmp=Stdlib.compare}
 
 let is_empty set = RB.is_empty set.tree
 
 let add elt set = {set with tree = RB.add ~cmp:set.cmp RB.New elt set.tree}
 
-exception Not_found
-
-let find elt set =
-  try RB.find ~cmp:set.cmp elt set.tree with
-    RB.Not_found -> raise Not_found
+let find elt set = RB.find ~cmp:set.cmp elt set.tree
 
 let find_opt elt set = RB.find_opt ~cmp:set.cmp elt set.tree
 

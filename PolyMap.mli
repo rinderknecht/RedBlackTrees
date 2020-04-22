@@ -37,8 +37,6 @@ val add : 'key -> 'value -> ('key, 'value) t -> ('key, 'value) t
    [key] in the map [map]. If [key] is not bound in [map], the
    exception [Not_found] is raised. *)
 
-exception Not_found
-
 val find : 'key -> ('key, 'value) t -> 'value
 
 (* The value of the call [find_opt key map] is [Some value] if the key

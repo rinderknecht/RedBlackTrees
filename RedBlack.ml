@@ -50,8 +50,6 @@ let add ~cmp choice elt tree =
   in try blacken (insert tree) with
        Physical_equality -> tree
 
-exception Not_found
-
 let rec find ~cmp elt = function
   Ext -> raise Not_found
 | Int (_, left, root, right) ->

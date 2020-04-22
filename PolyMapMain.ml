@@ -2,7 +2,7 @@
 
 let () = Printf.printf "Testing polymorphic maps... "
 
-let cmp = Pervasives.compare
+let cmp = Stdlib.compare
 
 let in_assoc =
   ["c", 2;
