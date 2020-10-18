@@ -2,9 +2,9 @@ opam-version : "2.0"
 version      : "1.0"
 maintainer   : "rinderknecht@free.fr"
 authors      : [ "Christian Rinderknecht" ]
-homepage     : "https://github.com/rinderknecht/Red-Black_Trees"
-bug-reports  : "https://github.com/rinderknecht/Red-Black_Trees/issues"
-dev-repo     : "git+https://github.com/rinderknecht/Red-Black_Trees.git"
+homepage     : "https://github.com/rinderknecht/RedBlackTrees"
+bug-reports  : "https://github.com/rinderknecht/RedBlackTrees/issues"
+dev-repo     : "git+https://github.com/rinderknecht/RedBlackTrees.git"
 license      : "MIT"
 synopsis     : "Red-Black Trees a la Okasaki"
 description  : "Red-black trees according to the following classic paper:
@@ -18,5 +18,5 @@ build        : [
                ]
 
 url {
-  src: "https://gitlab.com/rinderknecht/Red-Black_Trees/-/archive/master/Red-Black_Trees.tar.gz"
+  src: "https://gitlab.com/rinderknecht/RedBlackTrees/-/archive/master/RedBlackTrees.tar.gz"
 }
