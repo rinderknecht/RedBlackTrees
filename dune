@@ -1,0 +1,19 @@
+(library
+  (name RedBlackTrees)
+  (public_name RedBlackTrees)
+  (wrapped false)
+  (modules PolyMap PolySet RedBlack))
+
+; PolyMapMain PolySetMain RedBlackMain
+
+(test
+ (modules PolyMapMain)
+ (name PolyMapMain))
+
+(test
+ (modules PolySetMain)
+ (name PolySetMain))
+
+(test
+ (modules RedBlackMain)
+ (name RedBlackMain))
