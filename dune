@@ -4,16 +4,17 @@
   (wrapped false)
   (modules PolyMap PolySet RedBlack))
 
-; PolyMapMain PolySetMain RedBlackMain
-
 (test
  (modules PolyMapMain)
+ (libraries RedBlackTrees)
  (name PolyMapMain))
 
 (test
  (modules PolySetMain)
+ (libraries RedBlackTrees)
  (name PolySetMain))
 
 (test
  (modules RedBlackMain)
+ (libraries RedBlackTrees)
  (name RedBlackMain))
