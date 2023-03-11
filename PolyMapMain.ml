@@ -1,5 +1,7 @@
 (* Unit testing of module [PolyMap] *)
 
+module PolyMap = RedBlackTrees.PolyMap
+
 let () = Printf.printf "Testing polymorphic maps... "
 
 let cmp = Stdlib.compare

@@ -1,6 +1,6 @@
 (* Unit testing of module [RedBlack] *)
 
-open RedBlack;;
+open RedBlackTrees.RedBlack
 
 let () = Printf.printf "Testing Red-black trees... "
 

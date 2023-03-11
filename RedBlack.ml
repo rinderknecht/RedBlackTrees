@@ -1,8 +1,7 @@
 (* Red-black trees according to the following classic paper:
 
    Chris Okasaki, Red-Black Trees in a Functional
-   Setting. J. Funct. Program. 9(4): 471-477 (1999)
-*)
+   Setting. J. Funct. Program. 9(4): 471-477 (1999) *)
 
 type colour = Red | Black
 

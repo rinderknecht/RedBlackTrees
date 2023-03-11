@@ -1,12 +1,12 @@
 (* Unit testing of module [PolySet] *)
 
-open PolySet;;
+module PolySet = RedBlackTrees.PolySet
 
 let () = Printf.printf "Testing polymorphic sets... "
 
 let cmp = Stdlib.compare
 
-let in_items = [6;7;9;1;0;3;6;1;8;5;4;2]
+let in_items = [6; 7; 9; 1; 0; 3; 6; 1; 8; 5; 4; 2]
 let sorted_in_items = List.sort_uniq cmp in_items
 
 (*
@@ -16,10 +16,10 @@ let () = Printf.printf "\nSorted input: "
 let () = List.iter (fun x -> Printf.printf "%d " x) sorted_in_items
 *)
 
-let empty_set = create ~cmp
+let empty_set = PolySet.create ~cmp
 
-let set = List.fold_right add in_items empty_set
-let out_items = elements set
+let set = List.fold_right PolySet.add in_items empty_set
+let out_items = PolySet.elements set
 
 (*
 let () = Printf.printf "\nOutput items: "

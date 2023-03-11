@@ -1,21 +1,17 @@
 opam-version : "2.0"
 version      : "1.0"
-maintainer   : "rinderknecht@free.fr"
-authors      : [ "Christian Rinderknecht" ]
-homepage     : "https://github.com/rinderknecht/RedBlackTrees"
-bug-reports  : "https://github.com/rinderknecht/RedBlackTrees/issues"
-dev-repo     : "git+https://github.com/rinderknecht/RedBlackTrees.git"
-license      : "MIT"
 synopsis     : "Red-Black Trees a la Okasaki"
 description  : "Red-black trees according to the following classic paper:
                 Chris Okasaki, Red-Black Trees in a Functional
                 Setting. J. Funct. Program. 9(4): 471-477 (1999)"
-depends      : [ "dune" ]
-
-build        : [
-                [ "sh" "-c" "printf 'let version = \"%s\"' \"$(git describe --always --dirty --abbrev=0)\" > Version.ml" ]
-                [ "dune" "build" "-p" name "-j" jobs ]
-               ]
+authors      : ["Christian Rinderknecht"]
+maintainer   : "rinderknecht@free.fr"
+homepage     : "https://github.com/rinderknecht/RedBlackTrees"
+bug-reports  : "https://github.com/rinderknecht/RedBlackTrees/issues"
+dev-repo     : "git+https://github.com/rinderknecht/RedBlackTrees.git"
+license      : "MIT"
+depends      : ["dune"]
+build        : [["dune" "build" "-p" name]]
 
 url {
   src: "https://gitlab.com/rinderknecht/RedBlackTrees/-/archive/master/RedBlackTrees.tar.gz"
